@@ -8,6 +8,7 @@ const usersRouter = require('./routes/users');
 
 const homeRouter = require('./routes/home');//import router/home
 const aboutRouter = require('./routes/about');//import router/about
+const contatctRouter = require('./routes/contact');//import router/contact
 
 const app = express();
 
@@ -23,5 +24,6 @@ app.use('/users', usersRouter); //http://localhost:3000/users
 app.set('view engine','ejs')//Set EJS template engine
 app.use('/home',homeRouter)//http://localhost:3000/home
 app.use('/about',aboutRouter)//http://localhost:3000/about
+app.use('/contact',contatctRouter)//http://localhost:3000/contact
 
 module.exports = app;
