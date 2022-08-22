@@ -5,7 +5,9 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const homeRouter = require('./routes/home')
+
+const homeRouter = require('./routes/home');//import router/home
+const aboutRouter = require('./routes/about');//import router/about
 
 const app = express();
 
@@ -15,14 +17,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//http://localhost:3000/
-app.use('/', indexRouter);
-//http://localhost:3000/users
-app.use('/users', usersRouter);
+app.use('/', indexRouter); //http://localhost:3000/
+app.use('/users', usersRouter); //http://localhost:3000/users
 
-//Set EJS template engine
-app.set('view engine','ejs')
-http://localhost:3000/home
-app.use('/home',homeRouter)
+app.set('view engine','ejs')//Set EJS template engine
+app.use('/home',homeRouter)//http://localhost:3000/home
+app.use('/about',aboutRouter)//http://localhost:3000/about
 
 module.exports = app;
